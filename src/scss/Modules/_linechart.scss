@@ -1,0 +1,27 @@
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.circle {
+    fill: white;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+div.tooltip {
+    position: absolute;
+
+    width: 6rem;
+    height: 3rem;
+    padding: 0.25rem 0.5rem 0;
+    background: lightsteelblue;
+
+    font-size: 0.8rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    border-radius: 8px;
+
+    pointer-events: none;
+}

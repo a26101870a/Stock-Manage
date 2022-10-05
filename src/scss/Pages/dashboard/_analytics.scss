@@ -1,0 +1,100 @@
+.analytics {
+    margin: 1rem;
+    border: $default-border;
+
+    font-family: 'Source Sans Pro', sans-serif;
+
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        height: 20%;
+    }
+
+    &__title {
+        padding-left: 2rem;
+        font-size: 2rem;
+    }
+
+    &__content {
+        display: grid;
+        place-items: center;
+
+        width: 100%;
+        height: 80%;
+    }
+
+    &__indexname {
+        font-family: $NotoFontStyle;
+    }
+}
+
+.analytics__select {
+    button {
+        margin: 0 0.25rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+
+        font-family: $SourceFontStyle;
+
+        &:hover {
+            padding: 0.5rem;
+            background-color: $menu-active-color;
+
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    select {
+        margin: 0 1rem;
+
+        font-family: $NotoFontStyle;
+        border: $selct-border;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .analytics {
+        margin: 0;
+
+        &__topbar {
+            flex-direction: column;
+        }
+
+        &__title {
+            align-self: flex-start;
+
+            padding: 0.5rem 1rem;
+
+            font-size: 1.5rem;
+        }
+    }
+
+    .analytics__select {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 0;
+        padding: 0;
+
+        button {
+            order: 2;
+
+            margin: 0;
+
+            font-size: 0.8rem;
+        }
+
+        select {
+            order: 1;
+
+            margin: 0 0.5rem;
+
+            font-size: 0.8rem;
+        }
+    }
+}

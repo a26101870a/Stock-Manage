@@ -1,0 +1,43 @@
+.trend {
+    &-up {
+        color: red;
+    }
+
+    &-down {
+        color: green;
+    }
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+
+    border: none;
+
+    font-size: 1rem;
+
+    label i {
+        padding: 0 0.5rem;
+
+        font-size: 1rem;
+    }
+
+    &__input {
+        border: none;
+
+        font-size: 1rem;
+
+        &:focus {
+            outline: none;
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    span i {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}

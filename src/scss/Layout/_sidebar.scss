@@ -1,0 +1,98 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    place-content: center start;
+    position: fixed;
+
+    width: 15vw;
+    height: 100vh;
+    background-color: $lighter-dark;
+
+    font-family: $SourceFontStyle;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+
+    height: 15%;
+
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.menu {
+    position: relative;
+
+    height: 85%;
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+
+        color: $menu-item-color;
+        font-size: 1rem;
+
+        &-active {
+            background-color: $menu-active-color;
+            color: white;
+        }
+    }
+
+    &__icon {
+        margin-right: 0.5rem;
+
+        i {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0px;
+
+        width: 100vw;
+        height: 7vh;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            flex-grow: 2;
+
+            margin: 0;
+            padding: 1rem;
+
+            border-radius: 0;
+        }
+
+        &__display {
+            display: none;
+        }
+
+        &__icon {
+            margin-right: 0;
+        }
+    }
+}

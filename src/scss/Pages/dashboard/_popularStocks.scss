@@ -1,0 +1,82 @@
+.popularStocks {
+    margin: 1rem;
+    border: $default-border;
+
+    &__topbar {
+        @extend %flexTopbar;
+
+        padding: 1rem;
+        padding-right: 3rem;
+
+        select {
+            border: $selct-border;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__content {
+        padding: 0 1rem;
+        font-family: $NotoFontStyle;
+    }
+
+    &__items {
+        display: block;
+        height: 50vh;
+        overflow-y: overlay;
+    }
+}
+
+.popularItem {
+    @extend %tableItem;
+
+    &__names {
+        @extend %tableName;
+    }
+
+    &__title {
+        @extend %flexTitle;
+
+        width: 50%;
+    }
+
+    &__price {
+        width: 25%;
+    }
+
+    &__trend {
+        width: 25%;
+    }
+
+    &:nth-child(odd) {
+        background-color: white;
+    }
+
+    &:nth-child(even) {
+        background-color: $lighter-gray;
+    }
+
+    &:hover {
+        background-color: gainsboro;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popularStocks {
+        margin: 0;
+
+        &__topbar {
+            padding: 0 1rem;
+        }
+
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__content {
+            font-size: 0.9rem;
+        }
+    }
+}

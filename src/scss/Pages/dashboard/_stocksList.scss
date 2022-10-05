@@ -1,0 +1,116 @@
+.stocksList {
+    margin: 1rem;
+
+    &__topbar {
+        @extend %flexTopbar;
+
+        padding: 1rem 6rem 1rem 2rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__content {
+        padding: 0 5rem;
+        font-family: $NotoFontStyle;
+    }
+
+    &__items {
+        display: block;
+        height: 17*5vh;
+        overflow-y: overlay;
+    }
+}
+
+.listItem {
+    @extend %tableItem;
+
+    &__names {
+        @extend %tableName;
+    }
+
+    &__title {
+        @extend %flexTitle;
+
+        width: 25%;
+    }
+
+    &__opening,
+    &__closing,
+    &__highest,
+    &__lowest,
+    &__trend {
+        width: 15%;
+    }
+
+    &:nth-child(odd) {
+        background-color: white;
+    }
+
+    &:nth-child(even) {
+        background-color: $lighter-gray;
+    }
+
+    &:hover {
+        background-color: gainsboro;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stocksList {
+        margin: 0;
+
+        &__title {
+            width: 50%;
+            font-size: 1.5rem;
+        }
+
+        &__content {
+            padding: 0;
+        }
+    }
+
+    .stocksList__topbar {
+        padding: 0 1rem;
+
+        .searchBar {
+            width: 50%;
+
+            label i {
+                padding: 0;
+                padding-right: 0.5rem;
+            }
+
+            &__input {
+                width: 100%;
+
+                background-color: white;
+            }
+        }
+    }
+
+    .listItem {
+        padding: 0 1rem;
+
+        &__names {
+            font-size: 0.9rem;
+        }
+
+        &__name,
+        &__number {
+            font-size: 0.8rem;
+        }
+
+        &__closing,
+        &__trend {
+            width: 25%;
+        }
+
+        &__opening,
+        &__highest,
+        &__lowest {
+            display: none;
+        }
+    }
+}
