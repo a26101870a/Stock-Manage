@@ -1,1 +1,1 @@
-"# a26101870a.github.io/React-Project" 
+a26101870a.github.io/Stock-Manger
