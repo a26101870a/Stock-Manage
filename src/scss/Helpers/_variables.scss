@@ -1,5 +1,5 @@
-$menu-item-color: #bbb;
-$menu-active-color: rgb(34, 107, 208);
+$menu-item: #bbb;
+$menu-item-active: rgb(34, 107, 208);
 
 $ligter-red: rgb(255, 220, 220);
 $ligter-green: rgb(220, 255, 220);
@@ -8,8 +8,6 @@ $lighter-dark: #111;
 $lighter-gray: #eee;
 $lighter-gray-transparent: rgba(255, 255, 255, 0.5);
 
-$default-border: 1px solid #eee;
-$selct-border: 1px solid #ddd;
-
-$NotoFontStyle: 'Noto Sans TC', sans-serif;
-$SourceFontStyle: 'Source Sans Pro', sans-serif;
+$light-border: 1px solid #eee;
+$gainsboro-border: 1px solid gainsboro;
+$select-border: 1px solid #ddd;

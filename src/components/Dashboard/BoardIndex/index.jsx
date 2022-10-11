@@ -1,10 +1,10 @@
 import React from "react";
-import BoardIndexCard from 'Components/Dashboard/BoardIndex/BoardIndexCard'
+import BoardIndexCard from './BoardIndexCard'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import MI_INDEX from 'Data/MI_INDEX'
 
-const BoardIndex = (props) => {
-    const showIndex = [1, 2, 16, 17, 18, 19, 44,]
+export default function BoardIndex() {
+    const showIndex = [1, 2, 16, 17, 18, 19, 44,];
 
     return (
         <ScrollContainer className="l-boardIndex boardIndex scroll-container">
@@ -13,6 +13,4 @@ const BoardIndex = (props) => {
             ))}
         </ScrollContainer>
     );
-};
-
-export default BoardIndex;
+}

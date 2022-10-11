@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import lineChart from 'Functions/linechart.js'
-import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json'
+import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json';
+import lineChart from 'Functions/linechart.js';
 import { getColumnValue } from 'Functions/getColumnValue';
 
-const AnalyticsContent = (props) => {
+export default function Content() {
     const size = useWindowSize();
 
+    // getColumnValue(matrix, targetColumn) return an array
     var date = getColumnValue(MI_5MINS_HIST.data, 0)
         .map((item) => { return item.replace(/[0-9]{3,}/, '2022') })
 
@@ -33,8 +34,6 @@ const AnalyticsContent = (props) => {
         <div className='analytics__content'></div>
     );
 };
-
-export default AnalyticsContent;
 
 function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match

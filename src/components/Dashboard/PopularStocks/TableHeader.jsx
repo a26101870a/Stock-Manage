@@ -1,6 +1,6 @@
 import React from "react";
 
-const PopularStocksTableHeader = () => {
+export default function TableHeader() {
     return (
         <tr className='popularItem popularItem__names '>
             <th className='popularItem__title'>Name</th>
@@ -9,5 +9,3 @@ const PopularStocksTableHeader = () => {
         </tr >
     );
 }
-
-export default PopularStocksTableHeader;

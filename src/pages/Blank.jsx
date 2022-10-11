@@ -1,6 +1,6 @@
 import React from "react";
 
-const Blank = () => {
+export default function Blank() {
     return (
         <div className="l-content outerWrap">
             <div className="backgroundLayer">
@@ -9,5 +9,3 @@ const Blank = () => {
         </div >
     );
 };
-
-export default Blank;

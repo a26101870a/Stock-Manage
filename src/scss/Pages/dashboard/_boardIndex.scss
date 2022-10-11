@@ -1,24 +1,21 @@
 .boardIndex {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     place-content: center flex-start;
 
     padding: 1rem 1rem 0;
+    font-family: 'Microsoft JhengHei';
 }
 
 .indexCard {
-    display: flex;
-    flex-direction: column;
+    @extend %flexColumn;
     flex: 0 0 15vw;
 
     margin: 0 1rem;
-    border: $default-border;
-    border-bottom: 1px solid gainsboro;
+    border: $light-border;
+    border-bottom: $gainsboro-border;
     border-radius: 5%;
     background-color: white;
-
-    font-family: $NotoFontStyle;
 
     &__title {
         height: 60%;
@@ -56,15 +53,12 @@
 @media screen and (max-width: 768px) {
     .boardIndex {
         flex-direction: row;
-
         padding: 0.5rem;
     }
 
     .indexCard {
         flex: 0 0 45vw;
-
         margin: 0 0.5rem;
-
         font-size: 0.8rem;
 
         &__title {

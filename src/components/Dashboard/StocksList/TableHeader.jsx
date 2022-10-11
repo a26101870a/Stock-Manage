@@ -1,6 +1,6 @@
 import React from "react";
 
-const StocksListTableHeader = () => {
+export default function TableHeader() {
     return (
         <tr className='listItem listItem__names '>
             <th className='listItem__title'>Name</th>
@@ -11,6 +11,4 @@ const StocksListTableHeader = () => {
             <th className='listItem__trend'>Trend</th>
         </tr>
     );
-}
-
-export default StocksListTableHeader;
+};

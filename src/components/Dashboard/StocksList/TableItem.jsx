@@ -1,6 +1,6 @@
 import React from "react";
 
-const StocksListItem = (props) => {
+export default function TableItem(props) {
     let trendRate = props.data['Change'];
     let trendClassName = 'listItem__trend ';
 
@@ -38,6 +38,4 @@ const StocksListItem = (props) => {
             </td>
         </tr>
     );
-}
-
-export default StocksListItem;
+};

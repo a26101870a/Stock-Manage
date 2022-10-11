@@ -1,17 +1,17 @@
 import React from "react";
 
-const BoardIndexCard = (props) => {
+export default function BoardIndexCard({ data }) {
     // trend value is only defined as 'red' or 'green'
-    let trend = props.data[2].split(':')[1].split('\'')[0];
-    let trendNumber = props.data[4];
+    let trend = data[2].split(':')[1].split('\'')[0];
+    let trendNumber = data[4];
 
     let trendClassName = decideTrendClass(trend, trendNumber)
 
     return (
         <div className="indexCard">
-            <div className="indexCard__title">{props.data[0]}</div>
+            <div className="indexCard__title">{data[0]}</div>
             <div className="indexCard__content">
-                <span className="indexCard__closingIndex">收盤: {props.data[1].split('.')[0]}</span>
+                <span className="indexCard__closingIndex">收盤: {data[1].split('.')[0]}</span>
                 <span className={trendClassName}>
                     {(trend === 'red' && trendNumber !== '--') && '+'}{trendNumber}
                 </span>
@@ -19,8 +19,6 @@ const BoardIndexCard = (props) => {
         </div>
     );
 }
-
-export default BoardIndexCard;
 
 function decideTrendClass(trend, trendNumber) {
     let trendClassName = 'indexCard__trend'

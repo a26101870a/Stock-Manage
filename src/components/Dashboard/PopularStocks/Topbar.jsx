@@ -1,6 +1,6 @@
 import React from "react";
 
-const PopularStocksTopbar = () => {
+export default function Topbar() {
     return (
         <div className='popularStocks__topbar'>
             <div className='popularStocks__title'>Popular Stocks</div>
@@ -15,5 +15,3 @@ const PopularStocksTopbar = () => {
         </div>
     );
 }
-
-export default PopularStocksTopbar;
