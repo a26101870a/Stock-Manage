@@ -1,6 +1,6 @@
 import React from "react";
 
-const AnalyticsTopbar = () => {
+export default function Topbar() {
     return (
         <div className='analytics__topbar'>
             <div className="analytics__title">Analytics</div>
@@ -20,5 +20,3 @@ const AnalyticsTopbar = () => {
         </div>
     );
 }
-
-export default AnalyticsTopbar;

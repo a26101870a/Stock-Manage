@@ -1,14 +1,10 @@
 import React from "react";
-import Avatar from "Components/TopBar/Avatar";
-import Notificaion from "Components/TopBar/Notification";
+import user from 'Images/user1.jpg'
 
-const UserInformation = () => {
+export default function User() {
     return (
         <div className="user">
-            <Avatar />
-            <Notificaion />
+            <img className="user_avatar" src={user} alt="UserName" />
         </div>
     )
 };
-
-export default UserInformation;

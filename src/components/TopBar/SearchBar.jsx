@@ -2,13 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SearchBar = () => {
+export default function SearchBar() {
     let [searchValue, setSearchValue] = useState('');
     let navigate = useNavigate();
 
     return (
         <div className='searchBar'>
-            <label htmlFor="TopBarSearch"><i className='fa-solid fa-magnifying-glass'></i></label>
+            <label htmlFor="TopBarSearch">
+                <i className='fa-solid fa-magnifying-glass'></i>
+            </label>
             <input type='text' id='TopBarSearch'
                 className='searchBar__input'
                 title='Please Enter Stock Number eg. 2330'
@@ -17,8 +19,8 @@ const SearchBar = () => {
                 onChange={(e) => { setSearchValue(e.target.value) }}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
-                        if (searchValue.length === 4 &&
-                            (typeof parseInt(searchValue)) === 'number') {
+                        if ((searchValue.length === 4) &&
+                            ((typeof parseInt(searchValue)) === 'number')) {
                             navigate(`/stock/${searchValue}`);
                             setSearchValue('');
                         } else { alert('Please enter 4 digit numbers to search for stock') }
@@ -34,8 +36,5 @@ const SearchBar = () => {
                     } else { alert('Please enter 4 digit numbers to search for stock') }
                 }}></i></span>
         </div >
-
     )
 };
-
-export default SearchBar;

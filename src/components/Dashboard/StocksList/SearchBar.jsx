@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = (props) => {
+export default function SearchBar(props) {
     return (
         <div className='searchBar'>
             <label htmlFor='StocksListSearch'><i className='fa-solid fa-magnifying-glass'></i></label>
@@ -14,5 +14,3 @@ const SearchBar = (props) => {
         </div>
     )
 };
-
-export default SearchBar;

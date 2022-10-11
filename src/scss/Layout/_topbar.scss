@@ -1,29 +1,21 @@
 .topbar {
     display: flex;
-    flex-direction: row;
-    place-content: center space-between;
+    justify-content: space-between;
 
-    padding: 1rem 2rem;
-    border-bottom: 1px solid $lighter-gray;
+    padding: 1rem 4rem 1rem 2rem;
+    border-bottom: $light-border;
 
-    font-family: $SourceFontStyle;
+    &_information {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .user {
-    display: flex;
-    place-content: center center;
+    margin-left: 1rem;
 
-    align-items: center;
-}
-
-.avatar {
-    padding: 0 1rem;
-
-    &__img {
-        display: block;
-
-        width: 30px;
-        height: 30px;
+    &_avatar {
+        @include ContainerSize(30px, 30px);
         border-radius: 50%;
     }
 }
@@ -31,14 +23,11 @@
 .notification {
     display: flex;
     align-items: center;
-
-    i {
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .topbar {
+        padding-right: 1rem;
         background-color: $lighter-gray;
 
         .searchBar {

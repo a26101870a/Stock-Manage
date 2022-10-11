@@ -25,9 +25,9 @@
 
 @media screen and (max-width: 768px) {
     .l-dashBoard {
-        grid-template-rows: repeat(14, 1fr);
+        grid-template-rows: repeat(15, 1fr);
 
-        height: 238vh;
+        height: 265vh;
     }
 
     .l-boardIndex {
@@ -35,14 +35,14 @@
     }
 
     .l-analytics {
-        grid-area: 2/1/6/6;
+        grid-area: 2/1/7/6;
     }
 
     .l-popularStocks {
-        grid-area: 6/1/10/6;
+        grid-area: 7/1/11/6;
     }
 
     .l-stocksList {
-        grid-area: 10/1/15/6;
+        grid-area: 11/1/16/6;
     }
 }

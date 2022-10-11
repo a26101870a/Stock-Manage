@@ -1,12 +1,12 @@
 import React from "react";
-import AnalyticsTopbar from 'Components/Dashboard/Analytics/AnalyticsTopbar'
-import AnalyticsContent from 'Components/Dashboard/Analytics/AnalyticsContent'
+import Topbar from './Topbar'
+import Content from './Content'
 
-const Analytics = (props) => {
-    return (<div className="l-analytics analytics" >
-        <AnalyticsTopbar />
-        <AnalyticsContent />
-    </div>);
+export default function Analytics() {
+    return (
+        <div className="l-analytics analytics" >
+            <Topbar />
+            <Content />
+        </div>
+    );
 };
-
-export default Analytics;

@@ -2,9 +2,9 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from 'Pages/Layout';
 import Blank from 'Pages/Blank';
-import Dashboard from 'Pages/Dashboard';
+import Dashboard from 'Components/Dashboard';
 
-const Main = () => {
+export default function Main() {
     return (
         <HashRouter>
             <Routes>
@@ -14,7 +14,6 @@ const Main = () => {
                         <Route index element={<Blank />} />
                         <Route path=':stockId' element={<Blank />} />
                     </Route>
-                    <Route path='portfolio' element={<Blank />} />
                     <Route path='mystocks' element={<Blank />} />
                     <Route path='help' element={<Blank />} />
                     <Route path='settings' element={<Blank />} />
@@ -23,6 +22,4 @@ const Main = () => {
             </Routes>
         </HashRouter>
     );
-}
-
-export default Main;
+};

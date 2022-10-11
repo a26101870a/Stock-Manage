@@ -1,15 +1,17 @@
 .popularStocks {
-    margin: 1rem;
-    border: $default-border;
+    margin: 1rem 0 0.5rem 1rem;
+    border: $light-border;
 
     &__topbar {
-        @extend %flexTopbar;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
         padding: 1rem;
-        padding-right: 3rem;
+        font-family: 'Consolas';
 
         select {
-            border: $selct-border;
+            border: $select-border;
         }
     }
 
@@ -19,7 +21,7 @@
 
     &__content {
         padding: 0 1rem;
-        font-family: $NotoFontStyle;
+        font-family: 'Microsoft JhengHei';
     }
 
     &__items {
@@ -37,7 +39,7 @@
     }
 
     &__title {
-        @extend %flexTitle;
+        @extend %flexColumn;
 
         width: 50%;
     }
@@ -66,6 +68,7 @@
 @media screen and (max-width: 768px) {
     .popularStocks {
         margin: 0;
+
 
         &__topbar {
             padding: 0 1rem;

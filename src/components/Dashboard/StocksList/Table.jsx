@@ -1,15 +1,15 @@
 import React from "react";
-import StocksListTableHeader from 'Components/Dashboard/StocksList/StocksListTableHeader';
-import StocksListItem from 'Components/Dashboard/StocksList/StocksListItem';
+import TableHeader from './TableHeader';
+import TableItem from './TableItem';
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 
-const StocksListTable = (props) => {
+export default function StocksListTable(props) {
     var data = STOCK_DAY_ALL;
 
     return (
         <div className="stocksList__content">
             <table style={{ width: 100 + '%' }}>
-                <thead><StocksListTableHeader /></thead>
+                <thead><TableHeader /></thead>
                 <tbody className="stocksList__items">
                     {data
                         .filter((item) => {
@@ -22,12 +22,10 @@ const StocksListTable = (props) => {
                             return (code.startsWith(filter) || name.startsWith(filter));
                         })
                         .map((item, index) => (
-                            <StocksListItem data={item} key={index} />
+                            <TableItem data={item} key={index} />
                         ))}
                 </tbody>
             </table>
         </div>
     );
 }
-
-export default StocksListTable;

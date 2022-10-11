@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from 'react';
-import StocksListTopbar from 'Components/Dashboard/StocksList/StocksListTopbar';
-import StocksListTable from 'Components/Dashboard/StocksList/StocksListTable';
+import Topbar from './Topbar';
+import Table from './Table';
 
-const StocksList = () => {
+export default function StocksList() {
     let [filterValue, setFilterValue] = useState('');
 
-    return (<div className="l-stocksList stocksList" >
-        <StocksListTopbar filterValue={filterValue} setFilterValue={setFilterValue} />
-        <StocksListTable filterValue={filterValue} />
-    </div>);
+    return (
+        <div className="l-stocksList stocksList" >
+            <Topbar filterValue={filterValue} setFilterValue={setFilterValue} />
+            <Table filterValue={filterValue} />
+        </div>
+    );
 };
-
-export default StocksList;

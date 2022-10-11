@@ -1,9 +1,9 @@
 import React from "react";
 
-const Notificaion = () => {
+export default function Notificaion() {
     return (
-        <div className="notification"><i className="fa-regular fa-bell"></i></div>
+        <div className="notification">
+            <i className="fa-regular fa-bell" />
+        </div>
     )
 };
-
-export default Notificaion;

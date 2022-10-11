@@ -1,3 +1,8 @@
+%flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
 %tableItem {
     display: flex;
     flex-direction: row;
@@ -9,21 +14,6 @@
     padding-left: 2rem;
 
     text-align: left;
-}
-
-%flexTopbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 10vh;
-
-    font-family: $SourceFontStyle;
-}
-
-%flexTitle {
-    display: flex;
-    flex-direction: column;
 }
 
 %tableName {
