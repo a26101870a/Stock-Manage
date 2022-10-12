@@ -3,7 +3,7 @@ import TableHeader from './TableHeader';
 import TableItem from './TableItem';
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 
-export default function StocksListTable(props) {
+export default function StocksListTable({ filterValue }) {
     var data = STOCK_DAY_ALL;
 
     return (
@@ -13,7 +13,7 @@ export default function StocksListTable(props) {
                 <tbody className="stocksList__items">
                     {data
                         .filter((item) => {
-                            let filter = props.filterValue;
+                            let filter = filterValue;
                             if (!filter) return true;
 
                             let code = item['Code'];
