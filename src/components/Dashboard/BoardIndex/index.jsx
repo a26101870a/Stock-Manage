@@ -1,32 +1,44 @@
-import React, { useState, useEffect } from "react";
-import BoardIndexCard from './BoardIndexCard'
-import ScrollContainer from 'react-indiana-drag-scroll'
-import MI_INDEX from 'Data/MI_INDEX.json'
+import React, { useReducer } from "react";
+import Card from './Card';
+import AddCard from './AddCard';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import MI_INDEX from 'Data/MI_INDEX.json';
 
-export default function BoardIndex({ date }) {
-    const showIndex = [1, 2, 16, 17, 18, 19, 44,];
-    const [boardIndex, setBoardIndex] = useState(null);
+export const ACTIONS = {
+    ADD_CARD: 'add-card',
+    DELETE_CARD: 'delete-card'
+}
 
-    useEffect(() => {
-        fetch(`https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=${date}&type=IND`)
-            .then(response => response.json())
-            .then(json => setBoardIndex(json))
-    }, [])
-
-    if (boardIndex === null) {
-        return (
-            <ScrollContainer className="l-boardIndex boardIndex scroll-container">
-                {showIndex.map((item, index) => (
-                    <BoardIndexCard data={MI_INDEX.data1[item]} key={index} />
-                ))}
-            </ScrollContainer>
-        );
+function reducer(showIndex, action) {
+    switch (action.type) {
+        case ACTIONS.ADD_CARD:
+            return [...showIndex, action.payload]
+        case ACTIONS.DELETE_CARD:
+            return showIndex.filter(index => index !== action.payload)
+        default:
+            return showIndex
     }
+}
+
+export default function BoardIndex() {
+    const [showIndex, dispatch] = useReducer(reducer, [0, 1])
+
     return (
         <ScrollContainer className="l-boardIndex boardIndex scroll-container">
+            <AddCard
+                data={MI_INDEX.data1}
+                showIndex={showIndex}
+                dispatch={dispatch}
+            />
             {showIndex.map((item, index) => (
-                <BoardIndexCard data={boardIndex.data1[item]} key={index} />
+                <Card
+                    key={index}
+                    id={item}
+                    data={MI_INDEX.data1[item]}
+                    dispatch={dispatch}
+                />
             ))}
         </ScrollContainer>
     );
+
 }
