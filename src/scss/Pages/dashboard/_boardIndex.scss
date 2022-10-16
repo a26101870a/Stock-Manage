@@ -17,9 +17,26 @@
     border-radius: 5%;
     background-color: white;
 
-    &__title {
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         height: 60%;
-        padding: 1rem;
+        padding: 0 0 1rem 1rem;
+    }
+
+    &__delete {
+        @extend %buttonStyle;
+        align-self: flex-start;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        background-color: white;
+        color: gray;
+
+        &:hover {
+            color: $lighter-dark;
+        }
     }
 
     &__content {
@@ -48,6 +65,49 @@
             color: green;
         }
     }
+
+    &_add {
+        @include ContainerSize(100%, 100%);
+        border: none;
+
+        color: $menu-item-active;
+        background-color: white;
+        font-size: 2rem;
+
+        cursor: pointer;
+    }
+
+    &_select {
+        @include ContainerSize(100%, 40%);
+        padding: 0 1rem;
+        border: none;
+        outline: none;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 1rem;
+        font-family: 'fangsong';
+
+        .btn-confirm {
+            @extend %buttonStyle;
+            background-color: $ligter-green;
+
+            &:hover {
+                background-color: $button-green;
+            }
+        }
+
+        .btn-cancel {
+            @extend %buttonStyle;
+            background-color: $ligter-red;
+
+            &:hover {
+                background-color: $button-red;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -73,6 +133,11 @@
 
         &__trend {
             padding: 0.5rem;
+        }
+
+        &_select {
+            outline: $select-border;
+            border: $select-border;
         }
     }
 }
