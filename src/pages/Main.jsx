@@ -4,6 +4,7 @@ import Layout from 'Pages/Layout';
 import Blank from 'Pages/Blank';
 import Dashboard from 'Components/Dashboard';
 import Stock from 'Components/Stock';
+import MyStocks from 'Components/MyStocks';
 
 export default function Main() {
     return (
@@ -15,7 +16,7 @@ export default function Main() {
                         <Route index element={<Blank />} />
                         <Route path=':stockId' element={<Blank />} />
                     </Route>
-                    <Route path='mystocks' element={<Blank />} />
+                    <Route path='mystocks' element={<MyStocks />} />
                     <Route path='help' element={<Blank />} />
                     <Route path='settings' element={<Blank />} />
                     <Route path='*' element={<Blank />} />
