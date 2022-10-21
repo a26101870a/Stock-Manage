@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from 'Pages/Layout';
 import Blank from 'Pages/Blank';
 import Dashboard from 'Components/Dashboard';
+import Stock from 'Components/Stock';
 
 export default function Main() {
     return (
@@ -10,7 +11,7 @@ export default function Main() {
             <Routes>
                 <Route path='/' element={<Layout />} >
                     <Route index element={<Dashboard />} />
-                    <Route path='stock' element={<Blank />}>
+                    <Route path='stock' element={<Stock />}>
                         <Route index element={<Blank />} />
                         <Route path=':stockId' element={<Blank />} />
                     </Route>
