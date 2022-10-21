@@ -1,8 +1,15 @@
 import React from "react";
+import { useState } from "react";
 
 export default function TableItem(props) {
     let trendRate = props.data['Change'];
     let trendClassName = 'listItem__trend ';
+
+    const [readyToBuy, setReadyToBuy] = useState(false)
+
+    function toggleReadyToBuy() {
+        setReadyToBuy(prevState => !prevState)
+    }
 
     if (trendRate > 0) {
         trendClassName += 'trend-up ';
@@ -35,6 +42,10 @@ export default function TableItem(props) {
             <td className={trendClassName}>
                 {trendRate > 0 && '+'}
                 {props.data['Change'].slice(0, props.data['Change'].length - 2)}
+            </td>
+            <td className="listItem__add">
+                {!readyToBuy && <i className="fa-solid fa-square-plus gray" onClick={toggleReadyToBuy}></i>}
+                {readyToBuy && <i class="fa-sharp fa-solid fa-square-check green" onClick={toggleReadyToBuy}></i>}
             </td>
         </tr>
     );
