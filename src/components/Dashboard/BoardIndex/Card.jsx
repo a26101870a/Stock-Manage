@@ -4,8 +4,8 @@ import { ACTIONS } from './index';
 export default function BoardIndexCard({ data, id, dispatch }) {
 
     // trend value is only defined as 'red' or 'green'
-    let trend = data[2].split(':')[1].split('\'')[0];
-    let trendNumber = data[4];
+    let trend = data['漲跌'];
+    let trendNumber = data['漲跌百分比'];
     let trendClassName = decideTrendClass(trend, trendNumber)
 
     function deleteIndex() {
@@ -15,7 +15,7 @@ export default function BoardIndexCard({ data, id, dispatch }) {
     return (
         <div className="indexCard">
             <div className="indexCard__topbar">
-                <div className="indexCard__title">{data[0]}</div>
+                <div className="indexCard__title">{data["指數"]}</div>
                 <button className="indexCard__delete"
                     onClick={deleteIndex}
                 >
@@ -24,9 +24,9 @@ export default function BoardIndexCard({ data, id, dispatch }) {
             </div>
 
             <div className="indexCard__content">
-                <span className="indexCard__closingIndex">收盤: {data[1].split('.')[0]}</span>
+                <span className="indexCard__closingIndex">收盤: {data['收盤指數']}</span>
                 <span className={trendClassName}>
-                    {(trend === 'red' && trendNumber !== '--') && '+'}{trendNumber}
+                    {(trend === '+' && trendNumber !== '--') && '+'}{trendNumber}
                 </span>
             </div>
         </div>
@@ -40,7 +40,7 @@ function decideTrendClass(trend, trendNumber) {
         return trendClassName;
     }
 
-    if (trend === 'red') {
+    if (trend === '+') {
         trendClassName += ' indexCard__trend-up';
     } else {
         trendClassName += ' indexCard__trend-down'
