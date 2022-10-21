@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import Card from './Card';
 import AddCard from './AddCard';
-import ScrollContainer from 'react-indiana-drag-scroll';
+// import ScrollContainer from 'react-indiana-drag-scroll';
 import MI_INDEX from 'Data/MI_INDEX.json';
 
 export const ACTIONS = {
@@ -24,7 +24,7 @@ export default function BoardIndex() {
     const [showIndex, dispatch] = useReducer(reducer, [0, 1])
 
     return (
-        <ScrollContainer className="l-boardIndex boardIndex scroll-container">
+        <div className="l-boardIndex boardIndex scroll-container">
             <AddCard
                 data={MI_INDEX.data1}
                 showIndex={showIndex}
@@ -38,7 +38,7 @@ export default function BoardIndex() {
                     dispatch={dispatch}
                 />
             ))}
-        </ScrollContainer>
+        </div>
     );
 
 }
