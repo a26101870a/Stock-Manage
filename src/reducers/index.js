@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import watchListSlice from "./watchListSlice";
+import watchListReducer from "./watchListSlice";
 
 export default combineReducers({
-    watchList: watchListSlice,
+    watchList: watchListReducer,
 })
