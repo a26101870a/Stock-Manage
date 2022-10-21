@@ -3,8 +3,12 @@ import { getColumnValue } from 'Functions/getColumnValue'
 import { ACTIONS } from './index';
 
 export default function AddCard({ data, showIndex, dispatch }) {
-    const name = getColumnValue(data, 0);
     const [show, setShow] = useState(false)
+    const name = [];
+
+    data.map((item, index) => {
+        name.push(item["指數"])
+    })
 
     function toogleShow() {
         setShow(prevShow => !prevShow)

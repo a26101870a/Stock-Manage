@@ -26,7 +26,7 @@ export default function BoardIndex() {
     return (
         <ScrollContainer className="l-boardIndex boardIndex scroll-container">
             <AddCard
-                data={MI_INDEX.data1}
+                data={MI_INDEX}
                 showIndex={showIndex}
                 dispatch={dispatch}
             />
@@ -34,7 +34,7 @@ export default function BoardIndex() {
                 <Card
                     key={index}
                     id={item}
-                    data={MI_INDEX.data1[item]}
+                    data={MI_INDEX[item]}
                     dispatch={dispatch}
                 />
             ))}
