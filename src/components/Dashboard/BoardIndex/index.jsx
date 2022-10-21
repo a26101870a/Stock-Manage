@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import Card from './Card';
 import AddCard from './AddCard';
 import ScrollContainer from 'react-indiana-drag-scroll';
-import MI_INDEX from 'Data/MI_INDEX_New.json';
+import MI_INDEX from 'Data/MI_INDEX.json';
 
 export const ACTIONS = {
     ADD_CARD: 'add-card',
