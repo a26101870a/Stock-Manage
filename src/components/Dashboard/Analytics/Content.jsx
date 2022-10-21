@@ -1,21 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import lineChart from 'Functions/linechart.js';
-import { getColumnValue } from 'Functions/getColumnValue';
+import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json'
 
-export default function Content({ data }) {
+export default function Content() {
     const size = useWindowSize();
+    var date = [];
+    var ClosingIndex = [];
 
-    // getColumnValue(matrix, targetColumn) return an array
-    var date = getColumnValue(data, 0)
-        .map((item) => { return item.replace(/[0-9]{3,}/, '2022') })
+    MI_5MINS_HIST.map(item => {
+        date.push(item["Date"])
+        ClosingIndex.push(item["ClosingIndex"])
+    })
 
-    var close = getColumnValue(data, 4)
-        .map((item) => { return item.split('.')[0] })
-        .map((item) => { return item.replace(/\,/g, '') })
-        .map((item) => { return parseInt(item, 10) });
+    date = date.map((item) => {
+        return item
+            .replace(/[0-9]{3}/, '2022')
+            .replace(/(.{4})(.{2})(.{2})/, '$1/$2/$3')
+    })
 
-    var dataTemp = [date, close];
+    ClosingIndex = ClosingIndex.map((item) => { return parseInt(item, 10) })
+
+    var dataTemp = [date, ClosingIndex];
     var data = [];
 
     for (let i = 0; i < dataTemp[0].length; i++) {
