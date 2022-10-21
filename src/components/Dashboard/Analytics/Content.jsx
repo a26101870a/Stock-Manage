@@ -1,17 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json';
 import lineChart from 'Functions/linechart.js';
 import { getColumnValue } from 'Functions/getColumnValue';
 
-export default function Content() {
+export default function Content({ data }) {
     const size = useWindowSize();
 
     // getColumnValue(matrix, targetColumn) return an array
-    var date = getColumnValue(MI_5MINS_HIST.data, 0)
+    var date = getColumnValue(data, 0)
         .map((item) => { return item.replace(/[0-9]{3,}/, '2022') })
 
-    var close = getColumnValue(MI_5MINS_HIST.data, 4)
+    var close = getColumnValue(data, 4)
         .map((item) => { return item.split('.')[0] })
         .map((item) => { return item.replace(/\,/g, '') })
         .map((item) => { return parseInt(item, 10) });
