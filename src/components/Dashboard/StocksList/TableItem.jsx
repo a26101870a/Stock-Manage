@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-export default function TableItem({ data, addStock, removeStock }) {
+export default function TableItem({ data, id, ready, addStock, removeStock, addToList, removeFromList }) {
     let trendRate = data['Change'];
     let trendClassName = 'listItem__trend ';
-
-    const [readyToBuy, setReadyToBuy] = useState(false)
+    const [readyToBuy, setReadyToBuy] = useState(ready)
 
     function toggleReadyToBuy() {
         setReadyToBuy(prevState => !prevState)
@@ -15,10 +14,10 @@ export default function TableItem({ data, addStock, removeStock }) {
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
-            console.log('add')
+            addToList(data['Code'])
         } else {
             removeStock({ number: data['Code'] })
-            console.log('remove')
+            removeFromList(data['Code'])
         }
     }
 
@@ -55,8 +54,8 @@ export default function TableItem({ data, addStock, removeStock }) {
                 {data['Change'].slice(0, data['Change'].length - 2)}
             </td>
             <td className="listItem__add">
-                {!readyToBuy && <i className="fa-solid fa-square-plus gray" onClick={toggleReadyToBuy}></i>}
-                {readyToBuy && <i className="fa-sharp fa-solid fa-square-check green" onClick={toggleReadyToBuy}></i>}
+                {!ready && <i className="fa-solid fa-square-plus gray" onClick={toggleReadyToBuy}></i>}
+                {ready && <i className="fa-sharp fa-solid fa-square-check green" onClick={toggleReadyToBuy}></i>}
             </td>
         </tr>
     );

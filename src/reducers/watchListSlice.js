@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const stockData = [];
 
@@ -17,8 +17,7 @@ const watchListSlice = createSlice({
         removeStock(state, action) {
             state.splice(
                 state.findIndex((item) =>
-                    item.number == action.payload)
-            )
+                    item.number == action.payload), 1)
         }
     }
 })
