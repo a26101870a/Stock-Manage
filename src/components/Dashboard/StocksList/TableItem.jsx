@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function TableItem({ data, addStock }) {
+export default function TableItem({ data, addStock, removeStock }) {
     let trendRate = data['Change'];
     let trendClassName = 'listItem__trend ';
 
@@ -8,17 +8,19 @@ export default function TableItem({ data, addStock }) {
 
     function toggleReadyToBuy() {
         setReadyToBuy(prevState => !prevState)
-    }
 
-    useEffect(() => {
-        if (readyToBuy) {
+        if (!readyToBuy) {
             addStock({
                 number: data['Code'],
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
+            console.log('add')
+        } else {
+            removeStock({ number: data['Code'] })
+            console.log('remove')
         }
-    }, [readyToBuy])
+    }
 
     if (trendRate > 0) {
         trendClassName += 'trend-up ';

@@ -1,15 +1,6 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
-const stockData = [
-    {
-        id: 1,
-        number: '2330',
-        name: '台積電',
-        price: 397.50,
-    },
-];
-
-let currentDataID = 1;
+const stockData = [];
 
 const watchListSlice = createSlice({
     name: "My stocks",
@@ -18,15 +9,20 @@ const watchListSlice = createSlice({
         addStock(state, action) {
             const { number, name, price } = action.payload;
             state.push({
-                id: (currentDataID += 1),
                 number,
                 name,
                 price,
             });
         },
+        removeStock(state, action) {
+            state.splice(
+                state.findIndex((item) =>
+                    item.number == action.payload)
+            )
+        }
     }
 })
 
-export const { addStock } = watchListSlice.actions
+export const { addStock, removeStock } = watchListSlice.actions
 
 export default watchListSlice.reducer;
