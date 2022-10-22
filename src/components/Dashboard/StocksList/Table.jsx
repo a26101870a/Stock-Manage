@@ -1,6 +1,6 @@
 import React from "react";
 import TableHeader from './TableHeader';
-import TableItem from './TableItem';
+import TableItem from 'Containers/StockList';
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 
 export default function StocksListTable({ filterValue }) {

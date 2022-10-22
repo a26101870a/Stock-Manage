@@ -1,18 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const stockData = [
     {
         id: 1,
         number: '2330',
         name: '台積電',
-        price: '397.50',
+        price: 397.50,
     },
 ];
 
-const stocksWatchListSlice = createSlice({
-    name: "stocks",
+let currentDataID = 1;
+
+const watchListSlice = createSlice({
+    name: "My stocks",
     initialState: stockData,
-    reducers: {}
+    reducers: {
+        addStock(state, action) {
+            const { number, name, price } = action.payload;
+            state.push({
+                id: (currentDataID += 1),
+                number,
+                name,
+                price,
+            });
+        },
+    }
 })
 
-export default stocksWatchListSlice.reducer;
+export const { addStock } = watchListSlice.actions
+
+export default watchListSlice.reducer;
