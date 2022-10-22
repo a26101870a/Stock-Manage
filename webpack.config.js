@@ -23,6 +23,8 @@ module.exports = {
             Pages: path.resolve(__dirname, 'src/pages'),
             Scss: path.resolve(__dirname, 'src/scss'),
             Data: path.resolve(__dirname, 'data'),
+            Reducers: path.resolve(__dirname, 'src/reducers'),
+            Containers: path.resolve(__dirname, 'src/containers'),
         }
     },
     plugins: [

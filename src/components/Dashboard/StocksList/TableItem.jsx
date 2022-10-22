@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function TableItem(props) {
-    let trendRate = props.data['Change'];
+export default function TableItem({ data, id, ready, addStock, removeStock, addToList, removeFromList }) {
+    let trendRate = data['Change'];
     let trendClassName = 'listItem__trend ';
+    const [readyToBuy, setReadyToBuy] = useState(ready)
+
+    function toggleReadyToBuy() {
+        setReadyToBuy(prevState => !prevState)
+
+        if (!readyToBuy) {
+            addStock({
+                number: data['Code'],
+                name: data['Name'],
+                price: parseFloat(data['ClosingPrice'])
+            })
+            addToList(data['Code'])
+        } else {
+            removeStock({ number: data['Code'] })
+            removeFromList(data['Code'])
+        }
+    }
 
     if (trendRate > 0) {
         trendClassName += 'trend-up ';
@@ -13,28 +30,32 @@ export default function TableItem(props) {
     return (
         <tr className="listItem ">
             <td className="listItem__title">
-                <div className="listItem__name">{props.data['Name']}</div>
-                <div className="listItem__number">{props.data['Code']}</div>
+                <div className="listItem__name">{data['Name']}</div>
+                <div className="listItem__number">{data['Code']}</div>
             </td>
             <td className="listItem__opening">
-                {(props.data['OpeningPrice'] === '') && '--'}
-                {props.data['OpeningPrice']}
+                {(data['OpeningPrice'] === '') && '--'}
+                {data['OpeningPrice']}
             </td>
             <td className="listItem__closing">
-                {(props.data['ClosingPrice'] === '') && '--'}
-                {props.data['ClosingPrice']}
+                {(data['ClosingPrice'] === '') && '--'}
+                {data['ClosingPrice']}
             </td>
             <td className="listItem__highest">
-                {(props.data['HighestPrice'] === '') && '--'}
-                {props.data['HighestPrice']}
+                {(data['HighestPrice'] === '') && '--'}
+                {data['HighestPrice']}
             </td>
             <td className="listItem__lowest">
-                {(props.data['LowestPrice'] === '') && '--'}
-                {props.data['LowestPrice']}
+                {(data['LowestPrice'] === '') && '--'}
+                {data['LowestPrice']}
             </td>
             <td className={trendClassName}>
                 {trendRate > 0 && '+'}
-                {props.data['Change'].slice(0, props.data['Change'].length - 2)}
+                {data['Change'].slice(0, data['Change'].length - 2)}
+            </td>
+            <td className="listItem__add">
+                {!ready && <i className="fa-solid fa-square-plus gray" onClick={toggleReadyToBuy}></i>}
+                {ready && <i className="fa-sharp fa-solid fa-square-check green" onClick={toggleReadyToBuy}></i>}
             </td>
         </tr>
     );

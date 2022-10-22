@@ -9,6 +9,7 @@ export default function TableHeader() {
             <th className='listItem__highest'>HighestPrice</th>
             <th className='listItem__lowest'>LowestPrice</th>
             <th className='listItem__trend'>Trend</th>
+            <th className='listItem__add'></th>
         </tr>
     );
 };

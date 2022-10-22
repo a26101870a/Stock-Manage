@@ -1,10 +1,12 @@
 import React from "react";
 import TableHeader from './TableHeader';
-import TableItem from './TableItem';
+import TableItem from 'Containers/StockList';
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 
-export default function StocksListTable({ filterValue }) {
+export default function StocksListTable({ filterValue, toBuyList }) {
     var data = STOCK_DAY_ALL;
+
+    console.log(toBuyList)
 
     return (
         <div className="stocksList__content">
@@ -22,7 +24,12 @@ export default function StocksListTable({ filterValue }) {
                             return (code.startsWith(filter) || name.startsWith(filter));
                         })
                         .map((item, index) => (
-                            <TableItem data={item} key={index} />
+                            <TableItem
+                                data={item}
+                                key={index}
+                                id={index}
+                                ready={(toBuyList.includes(item['Code']))}
+                            />
                         ))}
                 </tbody>
             </table>
