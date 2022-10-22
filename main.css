@@ -199,6 +199,7 @@ a {
   display: flex;
   flex-wrap: nowrap;
   place-content: center flex-start;
+  overflow-x: overlay;
   padding: 1rem 1rem 0;
   font-family: 'Microsoft JhengHei'; }
 
@@ -283,7 +284,10 @@ a {
       height: 50%;
       padding: 0.5rem; }
     .indexCard__trend {
-      padding: 0.5rem; } }
+      padding: 0.5rem; }
+    .indexCard_select {
+      outline: 1px solid #ddd;
+      border: 1px solid #ddd; } }
 
 .analytics {
   margin: 1rem 0.5rem 0 1rem;
@@ -418,10 +422,19 @@ a {
     overflow-y: overlay; }
 
 .listItem__title {
-  width: 25%; }
+  width: 20%; }
 
 .listItem__opening, .listItem__closing, .listItem__highest, .listItem__lowest, .listItem__trend {
   width: 15%; }
+
+.listItem__add {
+  width: 5%;
+  font-size: 1.25rem;
+  cursor: pointer; }
+  .listItem__add .gray {
+    color: gray; }
+  .listItem__add .green {
+    color: green; }
 
 .listItem:nth-child(odd) {
   background-color: white; }
@@ -457,7 +470,7 @@ a {
     .listItem__name, .listItem__number {
       font-size: 0.8rem; }
     .listItem__closing, .listItem__trend {
-      width: 25%; }
+      width: auto; }
     .listItem__opening, .listItem__highest, .listItem__lowest {
       display: none; } }
 
