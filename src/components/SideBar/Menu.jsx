@@ -21,12 +21,6 @@ const sidebarNavItems = [
         section: 'mystocks'
     },
     {
-        display: 'Help & Support',
-        icon: <i className="fa-solid fa-circle-info"></i>,
-        to: '/help',
-        section: 'help'
-    },
-    {
         display: 'Settings',
         icon: <i className="fa-solid fa-gear"></i>,
         to: '/settings',

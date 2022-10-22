@@ -4,25 +4,20 @@ import lineChart from 'Functions/linechart.js';
 import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json'
 
 export default function Content() {
-    const size = useWindowSize();
+    var data = [];
     var date = [];
-    var ClosingIndex = [];
+    var closingIndex = [];
+    const size = useWindowSize();
 
     MI_5MINS_HIST.map(item => {
         date.push(item["Date"])
-        ClosingIndex.push(item["ClosingIndex"])
+        closingIndex.push(item["ClosingIndex"])
     })
 
-    date = date.map((item) => {
-        return item
-            .replace(/[0-9]{3}/, '2022')
-            .replace(/(.{4})(.{2})(.{2})/, '$1/$2/$3')
-    })
+    date = date.map(item => transformDateFormat(item))
+    closingIndex = closingIndex.map(item => parseInt(item, 10))
 
-    ClosingIndex = ClosingIndex.map((item) => { return parseInt(item, 10) })
-
-    var dataTemp = [date, ClosingIndex];
-    var data = [];
+    var dataTemp = [date, closingIndex];
 
     for (let i = 0; i < dataTemp[0].length; i++) {
         let tempObj = {
@@ -41,27 +36,34 @@ export default function Content() {
 };
 
 function useWindowSize() {
-    // Initialize state with undefined width/height so server and client renders match
-    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,
     });
+
     useEffect(() => {
-        // Handler to call on window resize
         function handleResize() {
-            // Set window width/height to state
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight,
             });
         }
-        // Add event listener
+
         window.addEventListener("resize", handleResize);
-        // Call handler right away so state gets updated with initial window size
         handleResize();
-        // Remove event listener on cleanup
+
         return () => window.removeEventListener("resize", handleResize);
-    }, []); // Empty array ensures that effect is only run on mount
+    }, []);
+
     return windowSize;
+}
+
+//Transform the date from TWSE whose format is YYY/MM/DD to YYYY/MM/DD
+function transformDateFormat(date) {
+    let regTransformYear = new RegExp('[0-9]{3}');
+    let regSlashPosition = new RegExp('(.{4})(.{2})(.{2})');
+    let replaceYear = '2022';
+    let replaceSlash = '$1/$2/$3';
+
+    return date.replace(regTransformYear, replaceYear).replace(regSlashPosition, replaceSlash)
 }

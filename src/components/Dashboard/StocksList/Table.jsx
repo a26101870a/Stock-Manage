@@ -6,8 +6,6 @@ import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 export default function StocksListTable({ filterValue, toBuyList }) {
     var data = STOCK_DAY_ALL;
 
-    console.log(toBuyList)
-
     return (
         <div className="stocksList__content">
             <table style={{ width: 100 + '%' }}>

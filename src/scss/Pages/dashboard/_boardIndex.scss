@@ -8,7 +8,7 @@
     font-family: 'Microsoft JhengHei';
 }
 
-.indexCard {
+.card {
     @extend %flexColumn;
     flex: 0 0 15vw;
 
@@ -18,7 +18,7 @@
     border-radius: 5%;
     background-color: white;
 
-    &__topbar {
+    &_topbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,7 +27,7 @@
         padding: 0 0 1rem 1rem;
     }
 
-    &__delete {
+    &_delete {
         @extend %buttonStyle;
         align-self: flex-start;
         border-radius: 50%;
@@ -40,7 +40,7 @@
         }
     }
 
-    &__content {
+    &_content {
         display: inline-flex;
         justify-content: space-between;
 
@@ -48,7 +48,7 @@
         padding: 0 1rem;
     }
 
-    &__trend {
+    &_trend {
         display: flex;
         align-items: center;
 
@@ -117,22 +117,22 @@
         padding: 0.5rem;
     }
 
-    .indexCard {
+    .card {
         flex: 0 0 45vw;
         margin: 0 0.5rem;
         font-size: 0.8rem;
 
-        &__title {
+        &_title {
             height: 50%;
             padding: 0.5rem;
         }
 
-        &__content {
+        &_content {
             height: 50%;
             padding: 0.5rem;
         }
 
-        &__trend {
+        &_trend {
             padding: 0.5rem;
         }
 
