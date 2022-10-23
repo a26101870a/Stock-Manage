@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Options({ name }) {
+export default function Options({ optionsNames }) {
     return (
         <select className='card_select'
             name="BoardSelect"
             id="BoardSelect">
-            {name.map((item, index) => {
+            {optionsNames.map((item, index) => {
                 return (
                     <option key={index} value={item} >
                         {item}

@@ -2,10 +2,11 @@ import React from 'react'
 
 export default function Content({ closingIndex, trend, trendPercent }) {
     let trendClassName = decideTrendClass(trend, trendPercent);
+    let closingString = `收盤: ${closingIndex}`
 
     return (
         <div className="card_content">
-            <span className="card_closingIndex">收盤: {closingIndex}</span>
+            <span className="card_closingIndex">{closingString}</span>
             <span className={trendClassName}>
                 {(trend === '+' && trendPercent !== '--') && '+'}{trendPercent}
             </span>

@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Topbar({ title, deleteIndex }) {
+export default function Topbar({ deleteIndex }) {
     return (
         <div className="card_topbar">
-            <div className="card_title">{title}</div>
+            <div className="card_title">
+                {title}
+            </div>
             <button
                 className="card_delete"
                 onClick={deleteIndex}

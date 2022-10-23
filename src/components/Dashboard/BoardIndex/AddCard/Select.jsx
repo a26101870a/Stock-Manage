@@ -4,10 +4,10 @@ import { ACTIONS } from '../index';
 import Options from './Options';
 import Buttons from './Buttons';
 
-export default function Select({ toggleShow, showIndex, dispatch }) {
-    const name = [];
+const optionsNames = [];
 
-    MI_INDEX.map((item) => { name.push(item["指數"]) })
+export default function Select({ toggleShow, showIndex, dispatch }) {
+    MI_INDEX.map((item) => { optionsNames.push(item["指數"]) })
 
     function findSelectIndex() {
         const BoardSelect = document.querySelector('#BoardSelect');
@@ -16,7 +16,7 @@ export default function Select({ toggleShow, showIndex, dispatch }) {
             .call(BoardSelect.options, option => option.selected)
             .map(option => option.text);
 
-        return name.indexOf(selectedValues[0])
+        return optionsNames.indexOf(selectedValues[0])
     }
 
     function confirmSelect() {
@@ -32,7 +32,7 @@ export default function Select({ toggleShow, showIndex, dispatch }) {
 
     return (
         <div className='card'>
-            <Options name={name} />
+            <Options optionsNames={optionsNames} />
             <Buttons
                 confirmSelect={confirmSelect}
                 toggleShow={toggleShow}

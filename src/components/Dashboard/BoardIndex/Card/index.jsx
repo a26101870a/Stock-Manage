@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import { ACTIONS } from '../index';
-import Topbar from "./Topbar";
-import Content from "./Content";
+import Topbar from './Topbar';
+import Content from './Content';
 
 export default function Card({ id, data, dispatch }) {
     function deleteIndex() {
@@ -9,9 +9,9 @@ export default function Card({ id, data, dispatch }) {
     }
 
     return (
-        <div className="card">
+        <div className='card'>
             <Topbar
-                title={data["指數"]}
+                title={data['指數']}
                 deleteIndex={deleteIndex}
             />
             <Content

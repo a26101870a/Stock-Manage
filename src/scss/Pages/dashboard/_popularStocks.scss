@@ -1,8 +1,8 @@
-.popularStocks {
+.popular {
     margin: 1rem 0 0.5rem 1rem;
     border: $light-border;
 
-    &__topbar {
+    &_topbar {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -15,16 +15,16 @@
         }
     }
 
-    &__title {
+    &_title {
         font-size: 2rem;
     }
 
-    &__content {
+    &_content {
         padding: 0 1rem;
         font-family: 'Microsoft JhengHei';
     }
 
-    &__items {
+    &_items {
         display: block;
         height: 50vh;
         overflow-y: overlay;
@@ -34,21 +34,21 @@
 .popularItem {
     @extend %tableItem;
 
-    &__names {
+    &_header {
         @extend %tableName;
     }
 
-    &__title {
+    &_title {
         @extend %flexColumn;
 
         width: 50%;
     }
 
-    &__price {
+    &_price {
         width: 25%;
     }
 
-    &__trend {
+    &_trend {
         width: 25%;
     }
 
@@ -66,19 +66,19 @@
 }
 
 @media screen and (max-width: 768px) {
-    .popularStocks {
+    .popular {
         margin: 0;
 
 
-        &__topbar {
+        &_topbar {
             padding: 0 1rem;
         }
 
-        &__title {
+        &_title {
             font-size: 1.5rem;
         }
 
-        &__content {
+        &_content {
             font-size: 0.9rem;
         }
     }

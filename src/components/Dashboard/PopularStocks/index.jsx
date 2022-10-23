@@ -1,11 +1,11 @@
 import React from "react";
-import Topbar from './Topbar';
+import TopBar from './TopBar';
 import Table from "./Table";
 
 export default function PopularStocks() {
     return (
         <div className="l-popularStocks popularStocks" >
-            <Topbar />
+            <TopBar />
             <Table />
         </div>
     );
