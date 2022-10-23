@@ -1,8 +1,8 @@
 import React from 'react'
 
-const plusSign = '+';
-
 export default function PlusSign({ toggleShow }) {
+    let plusSign = '+';
+
     return (
         <div className='card'>
             <button

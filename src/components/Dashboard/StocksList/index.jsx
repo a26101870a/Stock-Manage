@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from 'react';
-import Topbar from './Topbar';
+import React, { useState } from "react";
+import Topbar from './TopBar';
 import Table from 'Containers/Table';
 
 export default function StocksList() {
@@ -8,7 +7,10 @@ export default function StocksList() {
 
     return (
         <div className="l-stocksList stocksList" >
-            <Topbar filterValue={filterValue} setFilterValue={setFilterValue} />
+            <Topbar
+                filterValue={filterValue}
+                setFilterValue={setFilterValue}
+            />
             <Table filterValue={filterValue} />
         </div>
     );

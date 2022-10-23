@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Topbar({ deleteIndex }) {
+export default function Topbar({ title, deleteIndex }) {
     return (
         <div className="card_topbar">
             <div className="card_title">

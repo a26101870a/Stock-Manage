@@ -1,12 +1,12 @@
 import React from 'react'
 import MI_INDEX from 'Data/MI_INDEX.json';
-import { ACTIONS } from '../index';
+import { ACTIONS } from 'Components/Dashboard/BoardIndex';
 import Options from './Options';
 import Buttons from './Buttons';
 
-const optionsNames = [];
-
 export default function Select({ toggleShow, showIndex, dispatch }) {
+    let optionsNames = [];
+
     MI_INDEX.map((item) => { optionsNames.push(item["指數"]) })
 
     function findSelectIndex() {

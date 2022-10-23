@@ -12,7 +12,7 @@ export default function SearchBar() {
                 <i className='fa-solid fa-magnifying-glass'></i>
             </label>
             <input type='text' id='TopBarSearch'
-                className='searchBar__input'
+                className='searchBar_input'
                 title='Please Enter Stock Number eg. 2330'
                 placeholder='Search for Stock'
                 value={searchValue}

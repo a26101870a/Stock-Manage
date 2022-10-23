@@ -4,10 +4,11 @@ import lineChart from 'Functions/linechart.js';
 import MI_5MINS_HIST from 'Data/MI_5MINS_HIST.json'
 
 export default function Content() {
-    var data = [];
-    var date = [];
-    var closingIndex = [];
     const size = useWindowSize();
+
+    let data = [];
+    let date = [];
+    let closingIndex = [];
 
     MI_5MINS_HIST.map(item => {
         date.push(item["Date"])
@@ -17,7 +18,7 @@ export default function Content() {
     date = date.map(item => transformDateFormat(item))
     closingIndex = closingIndex.map(item => parseInt(item, 10))
 
-    var dataTemp = [date, closingIndex];
+    let dataTemp = [date, closingIndex];
 
     for (let i = 0; i < dataTemp[0].length; i++) {
         let tempObj = {

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import StockList from "Components/Dashboard/StocksList/TableItem";
+import StockListTableItem from "Components/Dashboard/StocksList/Table/Body/Item";
 import { addStock, removeStock } from "../reducers/watchListSlice";
 import { addToList, removeFromList } from "../reducers/stockListSlice";
 
@@ -10,4 +10,4 @@ const mapDispatchToProps = {
     removeFromList
 }
 
-export default connect(null, mapDispatchToProps)(StockList);
+export default connect(null, mapDispatchToProps)(StockListTableItem);
