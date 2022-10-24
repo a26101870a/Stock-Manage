@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default function Input({ filterValue, setFilterValue }) {
-    let title = 'Please Enter Stock Number or Name';
-    let placeholder = 'Search for Stock';
+    const title = 'Please Enter Stock Number or Name';
+    const placeholder = 'Search for Stock';
 
     return (
         <input type='text'

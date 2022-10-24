@@ -4,7 +4,7 @@ export default function Label() {
     const iconClassName = 'fa-solid fa-magnifying-glass'
 
     return (
-        <label htmlFor='StocksListSearch'>
+        <label htmlFor="TopBarSearch">
             <i className={iconClassName}></i>
         </label>
     )
