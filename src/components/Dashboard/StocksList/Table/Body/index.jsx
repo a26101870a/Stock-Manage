@@ -2,7 +2,7 @@ import React from 'react'
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
 import Item from 'Containers/StockList';
 
-export default function List({ toBuyList, filterValue }) {
+export default function List({ pointerList, filterValue }) {
     let data = STOCK_DAY_ALL;
 
     return (
@@ -22,7 +22,7 @@ export default function List({ toBuyList, filterValue }) {
                         key={index}
                         id={index}
                         data={item}
-                        ready={(toBuyList.includes(item['Code']))}
+                        ready={(pointerList.includes(item['Code']))}
                     />
                 ))}
         </>

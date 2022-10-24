@@ -1,10 +1,10 @@
 import React from 'react';
 import Item from './Item';
 
-export default function WatchList({ stockData }) {
+export default function WatchList({ toBuyList }) {
     return (
         <div>
-            {stockData.map((item, index) => (
+            {toBuyList.map((item, index) => (
                 <Item key={index} data={item} />
             ))}
         </div>

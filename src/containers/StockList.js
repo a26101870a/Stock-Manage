@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import StockListTableItem from "Components/Dashboard/StocksList/Table/Body/Item";
-import { addStock, removeStock } from "../reducers/watchListSlice";
-import { addToList, removeFromList } from "../reducers/stockListSlice";
+import { addStock, removeStock } from "../reducers/toBuyListSlice";
+import { addToList, removeFromList } from "../reducers/pointerListSlice";
 
 const mapDispatchToProps = {
     addStock,

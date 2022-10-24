@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 //stock order index
-const readyToBuyListIndex = []
+const pointerList = []
 
-const sotckListSlice = createSlice({
+const pointerListSlice = createSlice({
     name: "To Buy List",
-    initialState: readyToBuyListIndex,
+    initialState: pointerList,
     reducers: {
         addToList(state, action) {
             if (!state.includes(action.payload)) {
@@ -20,6 +20,6 @@ const sotckListSlice = createSlice({
     }
 })
 
-export const { addToList, removeFromList } = sotckListSlice.actions
+export const { addToList, removeFromList } = pointerListSlice.actions
 
-export default sotckListSlice.reducer;
+export default pointerListSlice.reducer;

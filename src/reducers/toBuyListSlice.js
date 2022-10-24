@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const stockData = [];
+const toBuyList = [];
 
-const watchListSlice = createSlice({
+const toBuyListSlice = createSlice({
     name: "My stocks",
-    initialState: stockData,
+    initialState: toBuyList,
     reducers: {
         addStock(state, action) {
             const { number, name, price } = action.payload;
@@ -22,6 +22,9 @@ const watchListSlice = createSlice({
     }
 })
 
-export const { addStock, removeStock } = watchListSlice.actions
+export const {
+    addStock,
+    removeStock
+} = toBuyListSlice.actions
 
-export default watchListSlice.reducer;
+export default toBuyListSlice.reducer;
