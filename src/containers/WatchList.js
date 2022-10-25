@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import WatchList from "Components/MyStocks/WatchList";
 
 const mapStateToProps = (state) => ({
-    toBuyList: state.toBuyList,
+    buyList: state.buyList,
 });
 
 export default connect(mapStateToProps)(WatchList);
