@@ -16,9 +16,10 @@ const toBuyListSlice = createSlice({
             });
         },
         removeFromBuyList(state, action) {
+            const { code } = action.payload;
             state.splice(
                 state.findIndex((item) =>
-                    item.code == action.payload), 1)
+                    item.code == code), 1)
         },
         increaseStockAmount(state, action) {
             const { code } = action.payload;

@@ -1,26 +1,17 @@
 import React from 'react';
-import Item from './Item';
+import Item from 'Containers/BuyList/BuyList_Item';
 import Accumulator from './Accumulator';
 
-export default function BuyList({
-    buyList,
-    increaseStockAmount,
-    decreaseStockAmount,
-}) {
+export default function BuyList({ buyList }) {
     const isAnyItem = (buyList.length !== 0);
 
     return (
         <div className='l-buyList buyList'>
             {!isAnyItem && <div>No Stock Here</div>}
             {buyList.map((item, index) => (
-                <Item
-                    key={index}
-                    stock={item}
-                    increaseStockAmount={increaseStockAmount}
-                    decreaseStockAmount={decreaseStockAmount}
-                />
+                <Item key={index} stock={item} />
             ))}
-            {isAnyItem && <Accumulator />}
+            {isAnyItem && <Accumulator buyList={buyList} />}
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import BuyList from 'Containers/BuyList';
+import BuyList from 'Containers/BuyList/index.js';
 
 export default function MyStocks() {
     return (
