@@ -12,12 +12,11 @@ export default function Main() {
             <Routes>
                 <Route path='/' element={<Layout />} >
                     <Route index element={<Dashboard />} />
+                    <Route path='mystocks' element={<MyStocks />} />
                     <Route path='stock' element={<Stock />}>
                         <Route index element={<Blank />} />
                         <Route path=':stockId' element={<Blank />} />
                     </Route>
-                    <Route path='mystocks' element={<MyStocks />} />
-                    <Route path='help' element={<Blank />} />
                     <Route path='settings' element={<Blank />} />
                     <Route path='*' element={<Blank />} />
                 </Route >

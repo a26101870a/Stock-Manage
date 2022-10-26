@@ -1,8 +1,8 @@
 import React from "react";
 import Header from './Header';
-import Body from "./Body";
+import Body from "Containers/StockList/StocokList_TableBody";
 
-export default function Table({ filterValue, pointerList }) {
+export default function Table({ filterValue }) {
     return (
         <div className="stocksList_content">
             <table style={{ width: 100 + '%' }}>
@@ -10,10 +10,7 @@ export default function Table({ filterValue, pointerList }) {
                     <Header />
                 </thead>
                 <tbody className="stocksList_items">
-                    <Body
-                        pointerList={pointerList}
-                        filterValue={filterValue}
-                    />
+                    <Body filterValue={filterValue} />
                 </tbody>
             </table>
         </div>

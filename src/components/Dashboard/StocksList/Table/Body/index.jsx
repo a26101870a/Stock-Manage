@@ -1,6 +1,6 @@
 import React from 'react'
 import STOCK_DAY_ALL from 'Data/STOCK_DAY_ALL.json';
-import Item from 'Containers/StockList';
+import Item from 'Containers/StockList/StockList_TableItem';
 
 export default function List({ pointerList, filterValue }) {
     let data = STOCK_DAY_ALL;
@@ -22,7 +22,7 @@ export default function List({ pointerList, filterValue }) {
                         key={index}
                         id={index}
                         data={item}
-                        ready={(pointerList.includes(item['Code']))}
+                        isBuying={(pointerList.includes(item['Code']))}
                     />
                 ))}
         </>

@@ -6,25 +6,27 @@ import Toggle from "./Toggle";
 
 export default function TableItem({
     data,
-    ready,
-    addStock, removeStock,
-    addToList, removeFromList
+    isBuying,
+    addToBuyList,
+    removeFromBuyList,
+    addToStockList,
+    removeFromStockList
 }) {
-    const [readyToBuy, setReadyToBuy] = useState(ready)
+    const [readyToBuy, setReadyToBuy] = useState(isBuying)
 
     function toggleReadyToBuy() {
         setReadyToBuy(prevState => !prevState)
 
         if (!readyToBuy) {
-            addStock({
+            addToBuyList({
                 number: data['Code'],
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
-            addToList(data['Code'])
+            addToStockList(data['Code'])
         } else {
-            removeStock({ number: data['Code'] })
-            removeFromList(data['Code'])
+            removeFromBuyList({ number: data['Code'] })
+            removeFromStockList(data['Code'])
         }
     }
 
@@ -37,7 +39,7 @@ export default function TableItem({
             <Price data={data} />
             <Trend trend={data['Change']} />
             <Toggle
-                ready={ready}
+                isBuying={isBuying}
                 toggleReadyToBuy={toggleReadyToBuy}
             />
         </tr>

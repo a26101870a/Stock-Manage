@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import buyListReducer from "./buyListSlice";
 import pointerListReducer from "./pointerListSlice";
+import buyListReducer from "./buyListSlice";
+
 
 export default combineReducers({
-    buyList: buyListReducer,
     pointerList: pointerListReducer,
+    buyList: buyListReducer,
 })

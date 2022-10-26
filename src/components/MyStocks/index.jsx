@@ -1,10 +1,10 @@
 import React from 'react';
-import WatchList from 'Containers/WatchList';
+import BuyList from 'Containers/BuyList';
 
 export default function MyStocks() {
     return (
         <div className='l-content'>
-            <WatchList />
+            <BuyList />
         </div>
     )
 }

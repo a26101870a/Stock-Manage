@@ -9,16 +9,16 @@ const sidebarNavItems = [
         section: ''
     },
     {
-        display: 'Stock',
-        icon: <i className="fa-solid fa-sack-dollar"></i>,
-        to: '/stock',
-        section: 'stock'
-    },
-    {
         display: 'MyStocks',
         icon: <i className="fa-solid fa-user"></i>,
         to: '/mystocks',
         section: 'mystocks'
+    },
+    {
+        display: 'Stock',
+        icon: <i className="fa-solid fa-sack-dollar"></i>,
+        to: '/stock',
+        section: 'stock'
     },
     {
         display: 'Settings',

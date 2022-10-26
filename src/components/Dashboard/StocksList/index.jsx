@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Topbar from './TopBar';
-import Table from 'Containers/Table';
+import Table from './Table';
 
 export default function StocksList() {
     let [filterValue, setFilterValue] = useState('');

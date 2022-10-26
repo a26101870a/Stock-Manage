@@ -4,15 +4,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const pointerList = []
 
 const pointerListSlice = createSlice({
-    name: "To Buy List",
+    name: "Pointer List",
     initialState: pointerList,
     reducers: {
-        addToList(state, action) {
+        addToStockList(state, action) {
             if (!state.includes(action.payload)) {
                 state.push(action.payload);
             }
         },
-        removeFromList(state, action) {
+        removeFromStockList(state, action) {
             state.splice(
                 state.findIndex((item) =>
                     item == action.payload), 1)
@@ -20,6 +20,6 @@ const pointerListSlice = createSlice({
     }
 })
 
-export const { addToList, removeFromList } = pointerListSlice.actions
+export const { addToStockList, removeFromStockList } = pointerListSlice.actions
 
 export default pointerListSlice.reducer;
