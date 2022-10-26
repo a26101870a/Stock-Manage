@@ -1,39 +1,25 @@
-import React, { useReducer } from "react";
+import React from "react";
 import MI_INDEX from 'Data/MI_INDEX.json';
 import Card from './Card';
 import AddCard from './AddCard';
 
-export const ACTIONS = {
-    ADD_CARD: 'add-card',
-    DELETE_CARD: 'delete-card'
-}
-
-function reducer(showIndex, action) {
-    switch (action.type) {
-        case ACTIONS.ADD_CARD:
-            return [...showIndex, action.payload]
-        case ACTIONS.DELETE_CARD:
-            return showIndex.filter(index => index !== action.payload)
-        default:
-            return showIndex
-    }
-}
-
-export default function BoardIndex() {
-    const [showIndex, dispatch] = useReducer(reducer, [0, 1])
-
+export default function BoardIndex({
+    pointerList,
+    addToboardList,
+    removeFromboardList
+}) {
     return (
         <div className="l-boardIndex boardIndex scroll-container">
             <AddCard
-                showIndex={showIndex}
-                dispatch={dispatch}
+                pointerList={pointerList}
+                addToboardList={addToboardList}
             />
-            {showIndex.map((item, index) => (
+            {pointerList.map((item, index) => (
                 <Card
                     key={index}
                     id={item}
                     data={MI_INDEX[item]}
-                    dispatch={dispatch}
+                    removeFromboardList={removeFromboardList}
                 />
             ))}
         </div>

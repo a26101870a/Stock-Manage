@@ -1,10 +1,9 @@
 import React from 'react'
 import MI_INDEX from 'Data/MI_INDEX.json';
-import { ACTIONS } from 'Components/Dashboard/BoardIndex';
 import Options from './Options';
 import Buttons from './Buttons';
 
-export default function Select({ toggleShow, showIndex, dispatch }) {
+export default function Select({ toggleShow, pointerList, addToboardList }) {
     let optionsNames = [];
 
     MI_INDEX.map((item) => { optionsNames.push(item["指數"]) })
@@ -21,10 +20,10 @@ export default function Select({ toggleShow, showIndex, dispatch }) {
 
     function confirmSelect() {
         const targetIndex = findSelectIndex();
-        const isIndexExisting = showIndex.includes(targetIndex);
+        const isIndexExisting = pointerList.includes(targetIndex);
 
         if (!isIndexExisting) {
-            dispatch({ type: ACTIONS.ADD_CARD, payload: targetIndex })
+            addToboardList(targetIndex)
         } else {
             alert('類股指數已存在')
         }
