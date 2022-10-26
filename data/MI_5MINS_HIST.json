@@ -1,93 +1,17 @@
 [
-    {
-        "Date": "1111003",
-        "OpeningIndex": "13359",
-        "HighestIndex": "13440",
-        "LowestIndex": "13273",
-        "ClosingIndex": "13300"
-    },
-    {
-        "Date": "1111004",
-        "OpeningIndex": "13447",
-        "HighestIndex": "13587",
-        "LowestIndex": "13447",
-        "ClosingIndex": "13577"
-    },
-    {
-        "Date": "1111005",
-        "OpeningIndex": "13727",
-        "HighestIndex": "13902",
-        "LowestIndex": "13727",
-        "ClosingIndex": "13801"
-    },
-    {
-        "Date": "1111006",
-        "OpeningIndex": "13865",
-        "HighestIndex": "13899",
-        "LowestIndex": "13814",
-        "ClosingIndex": "13892"
-    },
-    {
-        "Date": "1111007",
-        "OpeningIndex": "13848",
-        "HighestIndex": "13848",
-        "LowestIndex": "13684",
-        "ClosingIndex": "13702"
-    },
-    {
-        "Date": "1111011",
-        "OpeningIndex": "13394",
-        "HighestIndex": "13394",
-        "LowestIndex": "13106",
-        "ClosingIndex": "13106"
-    },
-    {
-        "Date": "1111012",
-        "OpeningIndex": "13077",
-        "HighestIndex": "13131",
-        "LowestIndex": "12992",
-        "ClosingIndex": "13081"
-    },
-    {
-        "Date": "1111013",
-        "OpeningIndex": "13108",
-        "HighestIndex": "13111",
-        "LowestIndex": "12809",
-        "ClosingIndex": "12811"
-    },
-    {
-        "Date": "1111014",
-        "OpeningIndex": "13024",
-        "HighestIndex": "13222",
-        "LowestIndex": "13024",
-        "ClosingIndex": "13128"
-    },
-    {
-        "Date": "1111017",
-        "OpeningIndex": "12989",
-        "HighestIndex": "12989",
-        "LowestIndex": "12815",
-        "ClosingIndex": "12966"
-    },
-    {
-        "Date": "1111018",
-        "OpeningIndex": "13075",
-        "HighestIndex": "13143",
-        "LowestIndex": "12978",
-        "ClosingIndex": "13125"
-    },
-    {
-        "Date": "1111019",
-        "OpeningIndex": "13096",
-        "HighestIndex": "13156",
-        "LowestIndex": "12977",
-        "ClosingIndex": "12977"
-    },
-    {
-        "Date": "1111020",
-        "OpeningIndex": "12913",
-        "HighestIndex": "12946",
-        "LowestIndex": "12699",
-        "ClosingIndex": "12946"
-    }
-]
+{"Date":"1111003","OpeningIndex":"13359","HighestIndex":"13440","LowestIndex":"13273","ClosingIndex":"13300"},
+{"Date":"1111004","OpeningIndex":"13447","HighestIndex":"13587","LowestIndex":"13447","ClosingIndex":"13577"},
+{"Date":"1111005","OpeningIndex":"13727","HighestIndex":"13902","LowestIndex":"13727","ClosingIndex":"13801"},
+{"Date":"1111006","OpeningIndex":"13865","HighestIndex":"13899","LowestIndex":"13814","ClosingIndex":"13892"},
+{"Date":"1111007","OpeningIndex":"13848","HighestIndex":"13848","LowestIndex":"13684","ClosingIndex":"13702"},
+{"Date":"1111011","OpeningIndex":"13394","HighestIndex":"13394","LowestIndex":"13106","ClosingIndex":"13106"},
+{"Date":"1111012","OpeningIndex":"13077","HighestIndex":"13131","LowestIndex":"12992","ClosingIndex":"13081"},
+{"Date":"1111013","OpeningIndex":"13108","HighestIndex":"13111","LowestIndex":"12809","ClosingIndex":"12811"},
+{"Date":"1111014","OpeningIndex":"13024","HighestIndex":"13222","LowestIndex":"13024","ClosingIndex":"13128"},
+{"Date":"1111017","OpeningIndex":"12989","HighestIndex":"12989","LowestIndex":"12815","ClosingIndex":"12966"},
+{"Date":"1111018","OpeningIndex":"13075","HighestIndex":"13143","LowestIndex":"12978","ClosingIndex":"13125"},
+{"Date":"1111019","OpeningIndex":"13096","HighestIndex":"13156","LowestIndex":"12977","ClosingIndex":"12977"},
+{"Date":"1111020","OpeningIndex":"12913","HighestIndex":"12946","LowestIndex":"12699","ClosingIndex":"12946"},
+{"Date":"1111021","OpeningIndex":"12931","HighestIndex":"12954","LowestIndex":"12814","ClosingIndex":"12819"},
+{"Date":"1111024","OpeningIndex":"12914","HighestIndex":"13028","LowestIndex":"12857","ClosingIndex":"12857"},
+{"Date":"1111025","OpeningIndex":"12830","HighestIndex":"12843","LowestIndex":"12629","ClosingIndex":"12666"}]
