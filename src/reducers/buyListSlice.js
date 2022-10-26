@@ -7,24 +7,41 @@ const toBuyListSlice = createSlice({
     initialState: toBuyList,
     reducers: {
         addToBuyList(state, action) {
-            const { number, name, price } = action.payload;
+            const { code, name, price } = action.payload;
             state.push({
-                number,
+                code,
                 name,
                 price,
+                amount: 0,
             });
         },
         removeFromBuyList(state, action) {
             state.splice(
                 state.findIndex((item) =>
-                    item.number == action.payload), 1)
-        }
+                    item.code == action.payload), 1)
+        },
+        increaseStockAmount(state, action) {
+            const { code } = action.payload;
+            let index = state.findIndex((item) =>
+                item.code == code)
+            state[index].amount += 1
+        },
+        decreaseStockAmount(state, action) {
+            const { code } = action.payload;
+            let index = state.findIndex((item) =>
+                item.code == code)
+            if (state[index].amount > 0) {
+                state[index].amount -= 1
+            }
+        },
     }
 })
 
 export const {
     addToBuyList,
-    removeFromBuyList
+    removeFromBuyList,
+    increaseStockAmount,
+    decreaseStockAmount,
 } = toBuyListSlice.actions
 
 export default toBuyListSlice.reducer;

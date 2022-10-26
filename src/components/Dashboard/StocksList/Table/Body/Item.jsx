@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Title from "./Title";
 import Price from "./Price";
 import Trend from "./Trend";
@@ -19,13 +19,13 @@ export default function TableItem({
 
         if (!readyToBuy) {
             addToBuyList({
-                number: data['Code'],
+                code: data['Code'],
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
             addToStockList(data['Code'])
         } else {
-            removeFromBuyList({ number: data['Code'] })
+            removeFromBuyList(data['Code'])
             removeFromStockList(data['Code'])
         }
     }

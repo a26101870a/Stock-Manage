@@ -1,0 +1,90 @@
+.buyList {
+    @extend %flexColumn;
+    @include ContainerSize(100%, 100%);
+
+    overflow-y: overlay;
+    padding: 1rem 2rem;
+
+    border-right: $gainsboro-border;
+}
+
+.buyItem {
+    @include ContainerSize(100%, 4vh);
+    flex: 0 0 4vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 2rem;
+    border-bottom: $gainsboro-border;
+
+    &:last-child {
+        border: none;
+    }
+
+    &_code {
+        width: 20%;
+        color: $menu-item-active;
+        font-weight: 600;
+    }
+
+    &_name {
+        width: 30%;
+    }
+
+    &_price {
+        width: 25%;
+    }
+
+    &_amount {
+        width: 20%;
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+
+        span {
+            padding: 0 0.5rem;
+        }
+
+        button {
+            padding: 0.3rem 0.7rem;
+
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+
+            color: black;
+            font-size: 1.3rem;
+
+            cursor: pointer;
+
+            &:hover {
+                color: $menu-item-active;
+            }
+        }
+    }
+
+    &_delete {
+        width: 5%;
+        color: $button-red;
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+.accumulator {
+    padding: 1rem 2rem;
+    font-family: 'Consolas';
+    font-size: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        color: $menu-item-active;
+    }
+}

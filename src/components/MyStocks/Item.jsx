@@ -1,9 +1,43 @@
 import React from 'react'
 
-export default function Item({ data }) {
+export default function Item({
+    stock,
+    increaseStockAmount,
+    decreaseStockAmount,
+}) {
+    function increaseAmount() {
+        increaseStockAmount({ code: stock.code })
+    }
+
+    function decreaseAmount() {
+        decreaseStockAmount({ code: stock.code })
+    }
+
     return (
-        <div>
-            {data.number} {data.name} {data.price}
+        <div className='buyItem'>
+            <div className='buyItem_code'>
+                {stock.code}
+            </div>
+            <div className='buyItem_name'>
+                {stock.name}
+            </div>
+            <div className='buyItem_price'>
+                {stock.price}
+            </div>
+            <div className='buyItem_amount'>
+                <button onClick={decreaseAmount}>
+                    -
+                </button>
+                <span>
+                    {stock.amount}
+                </span>
+                <button onClick={increaseAmount}>
+                    +
+                </button>
+            </div>
+            <div className='buyItem_delete'>
+                <i className="fa-solid fa-trash-can" />
+            </div>
         </div>
     )
 }
