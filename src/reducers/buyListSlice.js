@@ -1,24 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const toBuyList = [];
+const toBuyList = [
+    {
+        code: 'Test Code',
+        name: 'Test Name',
+        price: 'Test Price',
+        amount: 5
+    }
+];
 
 const toBuyListSlice = createSlice({
     name: "To Buy List",
     initialState: toBuyList,
     reducers: {
         addToBuyList(state, action) {
-            const { number, name, price } = action.payload;
+            const { code, name, price } = action.payload;
             state.push({
-                number,
+                code,
                 name,
                 price,
+                amount: 0,
             });
         },
         removeFromBuyList(state, action) {
             state.splice(
                 state.findIndex((item) =>
-                    item.number == action.payload), 1)
-        }
+                    item.code == action.payload), 1)
+        },
     }
 })
 

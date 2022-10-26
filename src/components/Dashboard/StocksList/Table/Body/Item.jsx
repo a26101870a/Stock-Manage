@@ -19,7 +19,7 @@ export default function TableItem({
 
         if (!readyToBuy) {
             addToBuyList({
-                number: data['Code'],
+                code: data['Code'],
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
