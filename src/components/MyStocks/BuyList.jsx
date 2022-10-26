@@ -11,7 +11,7 @@ export default function BuyList({ buyList }) {
             {buyList.map((item, index) => (
                 <Item key={index} stock={item} />
             ))}
-            {isAnyItem && <Accumulator />}
+            {isAnyItem && <Accumulator buyList={buyList} />}
         </div>
     )
 }
