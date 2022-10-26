@@ -23,10 +23,10 @@ export default function TableItem({
                 name: data['Name'],
                 price: parseFloat(data['ClosingPrice'])
             })
-            addToStockList(data['Code'])
+            addToStockList({ code: data['Code'] })
         } else {
-            removeFromBuyList(data['Code'])
-            removeFromStockList(data['Code'])
+            removeFromBuyList({ code: data['Code'] })
+            removeFromStockList({ code: data['Code'] })
         }
     }
 

@@ -23,7 +23,7 @@ export default function Select({ toggleShow, pointerList, addToboardList }) {
         const isIndexExisting = pointerList.includes(targetIndex);
 
         if (!isIndexExisting) {
-            addToboardList(targetIndex)
+            addToboardList({ code: targetIndex })
         } else {
             alert('類股指數已存在')
         }

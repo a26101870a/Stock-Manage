@@ -16,8 +16,8 @@ export default function Item({
     }
 
     function removeStock() {
-        removeFromBuyList(stock.code)
-        removeFromStockList(stock.code)
+        removeFromBuyList({ code: stock.code })
+        removeFromStockList({ code: stock.code })
     }
 
     return (

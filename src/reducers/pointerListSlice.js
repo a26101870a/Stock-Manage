@@ -11,24 +11,28 @@ const pointerListSlice = createSlice({
     initialState: pointerList,
     reducers: {
         addToboardList(state, action) {
-            if (!state.boardList.includes(action.payload)) {
-                state.boardList.push(action.payload);
+            const { code } = action.payload;
+            if (!state.boardList.includes(code)) {
+                state.boardList.push(code);
             }
         },
         removeFromboardList(state, action) {
+            const { code } = action.payload;
             state.boardList.splice(
                 state.boardList.findIndex((item) =>
-                    item == action.payload), 1)
+                    item == code), 1)
         },
         addToStockList(state, action) {
-            if (!state.stockList.includes(action.payload)) {
-                state.stockList.push(action.payload);
+            const { code } = action.payload;
+            if (!state.stockList.includes(code)) {
+                state.stockList.push(code);
             }
         },
         removeFromStockList(state, action) {
+            const { code } = action.payload;
             state.stockList.splice(
                 state.stockList.findIndex((item) =>
-                    item == action.payload), 1)
+                    item == code), 1)
         }
     }
 })
