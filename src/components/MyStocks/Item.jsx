@@ -4,6 +4,8 @@ export default function Item({
     stock,
     increaseStockAmount,
     decreaseStockAmount,
+    removeFromBuyList,
+    removeFromStockList
 }) {
     function increaseAmount() {
         increaseStockAmount({ code: stock.code })
@@ -11,6 +13,11 @@ export default function Item({
 
     function decreaseAmount() {
         decreaseStockAmount({ code: stock.code })
+    }
+
+    function removeStock() {
+        removeFromBuyList(stock.code)
+        removeFromStockList(stock.code)
     }
 
     return (
@@ -35,7 +42,7 @@ export default function Item({
                     +
                 </button>
             </div>
-            <div className='buyItem_delete'>
+            <div className='buyItem_delete' onClick={removeStock}>
                 <i className="fa-solid fa-trash-can" />
             </div>
         </div>
