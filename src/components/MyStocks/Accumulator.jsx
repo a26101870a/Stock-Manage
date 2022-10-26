@@ -22,14 +22,16 @@ function transformToThousandComma(number) {
 function caculateCost(dataset) {
     let accumulator = 0;
 
-    dataset.map((stock) => {
-        let lot = 1000; //The stock amount unit that a lot represents one thousand shares
-        let price = stock.price * lot;
-        let amount = stock.amount;
-        let cost = price * amount
+    dataset
+        .filter(stock => !isNaN(stock.price))
+        .map((stock) => {
+            let lot = 1000; //The stock amount unit that a lot represents one thousand shares
+            let price = stock.price * lot;
+            let amount = stock.amount;
+            let cost = price * amount
 
-        accumulator += cost;
-    })
+            accumulator += cost;
+        })
 
     return accumulator
 }
