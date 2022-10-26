@@ -20,7 +20,6 @@ export default function List({ pointerList, filterValue }) {
                 .map((item, index) => (
                     <Item
                         key={index}
-                        id={index}
                         data={item}
                         isBuying={(pointerList.includes(item['Code']))}
                     />

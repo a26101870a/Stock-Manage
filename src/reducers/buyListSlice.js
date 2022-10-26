@@ -1,13 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const toBuyList = [
-    {
-        code: 'Test Code',
-        name: 'Test Name',
-        price: 'Test Price',
-        amount: 5
-    }
-];
+const toBuyList = [];
 
 const toBuyListSlice = createSlice({
     name: "To Buy List",
@@ -27,12 +20,28 @@ const toBuyListSlice = createSlice({
                 state.findIndex((item) =>
                     item.code == action.payload), 1)
         },
+        increaseStockAmount(state, action) {
+            const { code } = action.payload;
+            let index = state.findIndex((item) =>
+                item.code == code)
+            state[index].amount += 1
+        },
+        decreaseStockAmount(state, action) {
+            const { code } = action.payload;
+            let index = state.findIndex((item) =>
+                item.code == code)
+            if (state[index].amount > 0) {
+                state[index].amount -= 1
+            }
+        },
     }
 })
 
 export const {
     addToBuyList,
-    removeFromBuyList
+    removeFromBuyList,
+    increaseStockAmount,
+    decreaseStockAmount,
 } = toBuyListSlice.actions
 
 export default toBuyListSlice.reducer;

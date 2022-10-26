@@ -1,6 +1,18 @@
 import React from 'react'
 
-export default function Item({ stock }) {
+export default function Item({
+    stock,
+    increaseStockAmount,
+    decreaseStockAmount,
+}) {
+    function increaseAmount() {
+        increaseStockAmount({ code: stock.code })
+    }
+
+    function decreaseAmount() {
+        decreaseStockAmount({ code: stock.code })
+    }
+
     return (
         <div className='buyItem'>
             <div className='buyItem_code'>
@@ -13,9 +25,15 @@ export default function Item({ stock }) {
                 {stock.price}
             </div>
             <div className='buyItem_amount'>
-                <button>-</button>
-                <span>{stock.amount}</span>
-                <button>+</button>
+                <button onClick={decreaseAmount}>
+                    -
+                </button>
+                <span>
+                    {stock.amount}
+                </span>
+                <button onClick={increaseAmount}>
+                    +
+                </button>
             </div>
             <div className='buyItem_delete'>
                 <i className="fa-solid fa-trash-can" />
