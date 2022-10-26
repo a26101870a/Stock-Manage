@@ -1,11 +1,10 @@
 import React from 'react';
-import { ACTIONS } from '../index';
 import Topbar from './Topbar';
 import Content from './Content';
 
-export default function Card({ id, data, dispatch }) {
+export default function Card({ id, data, removeFromboardList }) {
     function deleteIndex() {
-        dispatch({ type: ACTIONS.DELETE_CARD, payload: id })
+        removeFromboardList(id)
     }
 
     return (

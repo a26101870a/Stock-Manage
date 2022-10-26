@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PlusSign from './PlusSign';
 import Select from './Select';
 
-export default function AddCard({ showIndex, dispatch }) {
+export default function AddCard({ pointerList, addToboardList }) {
     const [show, setShow] = useState(false)
 
     function toggleShow() {
@@ -14,8 +14,8 @@ export default function AddCard({ showIndex, dispatch }) {
             {!show && (<PlusSign toggleShow={toggleShow} />)}
             {show && (<Select
                 toggleShow={toggleShow}
-                showIndex={showIndex}
-                dispatch={dispatch}
+                pointerList={pointerList}
+                addToboardList={addToboardList}
             />)}
         </>
     )

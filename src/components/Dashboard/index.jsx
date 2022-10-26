@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardIndex from './BoardIndex';
+import BoardIndex from 'Containers/BoardIndex';
 import Analytics from './Analytics';
 import PopularStocks from './PopularStocks';
 import StocksList from './StocksList';
