@@ -1,9 +1,10 @@
 import React from 'react'
 
 export default function Aaccumulator() {
+    const startWord = 'Total Cost: '
     return (
-        <div className='l-accumulator'>
-            Aaccumulator
+        <div className='accumulator'>
+            {startWord}
         </div>
     )
 }

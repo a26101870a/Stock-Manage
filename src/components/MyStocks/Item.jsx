@@ -17,6 +17,9 @@ export default function Item({ stock }) {
                 <span>{stock.amount}</span>
                 <button>+</button>
             </div>
+            <div className='buyItem_delete'>
+                <i className="fa-solid fa-trash-can" />
+            </div>
         </div>
     )
 }
