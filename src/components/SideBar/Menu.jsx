@@ -20,12 +20,12 @@ const sidebarNavItems = [
         to: '/stock',
         section: 'stock'
     },
-    {
-        display: 'Settings',
-        icon: <i className="fa-solid fa-gear"></i>,
-        to: '/settings',
-        section: 'settings'
-    },
+    // {
+    //     display: 'Settings',
+    //     icon: <i className="fa-solid fa-gear"></i>,
+    //     to: '/settings',
+    //     section: 'settings'
+    // },
 ]
 
 export default function Menu() {
