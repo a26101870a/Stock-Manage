@@ -12,6 +12,8 @@ export default function TableItem({
     addToStockList,
     removeFromStockList
 }) {
+    // If isBuying us true, we set this stock is readyToBuy in stock list,
+    // and is existing in buy list, and the icon will be green.
     const [readyToBuy, setReadyToBuy] = useState(isBuying)
 
     function toggleReadyToBuy() {
