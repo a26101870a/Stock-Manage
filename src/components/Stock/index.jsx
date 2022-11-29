@@ -9,17 +9,17 @@ export default function Stock() {
 
     const url = `https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20221128&stockNo=${stockId}`; // origin api url
 
-    useEffect(() => {
-        if (flag) {
-            axios.get(url)
-                .then(response => response.data)
-                .then(response => {
-                    console.log(response)
-                    setStockInformation(response)
-                })
-            // .then(setTimeout(console.log(stockInformation.data), 2000))
-        }
-    }, [url])
+    // useEffect(() => {
+    //     if (flag) {
+    //         axios.get(url)
+    //             .then(response => response.data)
+    //             .then(response => {
+    //                 console.log(response)
+    //                 setStockInformation(response)
+    //             })
+    //         // .then(setTimeout(console.log(stockInformation.data), 2000))
+    //     }
+    // }, [url])
 
 
     return (
